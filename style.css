@@ -1,0 +1,429 @@
+:root{
+    --bg:#0b0b0c;
+    --card:#121214;
+    --text:#f3f3f3;
+    --muted:rgba(255,255,255,.72);
+    --line:rgba(255,255,255,.10);
+    --gold:#c7a36a;
+    --gold2:#e0c08a;
+    --shadow: 0 18px 60px rgba(0,0,0,.55);
+  }
+  
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  
+  body{
+    margin:0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    background: radial-gradient(1000px 600px at 20% 0%, rgba(199,163,106,.12), transparent 60%),
+                radial-gradient(900px 500px at 90% 10%, rgba(199,163,106,.10), transparent 65%),
+                var(--bg);
+    color:var(--text);
+  }
+  
+  .container{
+    width:min(1100px, 92%);
+    margin:0 auto;
+  }
+  
+  a{color:inherit; text-decoration:none}
+  .muted{color:var(--muted)}
+  
+  /* NAV */
+  .nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    backdrop-filter: blur(10px);
+    background: rgba(8,8,9,.72);
+    border-bottom:1px solid var(--line);
+  }
+  
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:14px 0;
+    gap:14px;
+  }
+  
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:800;
+    letter-spacing:.2px;
+  }
+  
+  .logo{
+    width:34px;
+    height:34px;
+    border-radius:10px;
+    object-fit:cover;
+    border:1px solid rgba(199,163,106,.35);
+    box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  }
+  
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:18px;
+  }
+  
+  .nav-links a{
+    opacity:.85;
+    font-weight:600;
+  }
+  .nav-links a:hover{opacity:1}
+  
+  .nav-cta{
+    display:flex;
+    gap:10px;
+    margin-left:6px;
+  }
+  
+  /* mobile menu */
+  .burger{
+    display:none;
+    background:transparent;
+    border:0;
+    padding:8px;
+    cursor:pointer;
+  }
+  
+  .burger span{
+    display:block;
+    width:22px;
+    height:2px;
+    background:#fff;
+    margin:5px 0;
+    opacity:.9;
+  }
+  
+  .drawer{
+    display:none;
+    flex-direction:column;
+    gap:12px;
+    padding:14px 4%;
+    border-top:1px solid var(--line);
+    background: rgba(8,8,9,.92);
+  }
+  body.menu-open .drawer{display:flex}
+  
+  /* HERO */
+  .hero{
+    position:relative;
+    min-height:78vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  
+  .hero-bg{
+    position:absolute; inset:0;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    transform: scale(1.06);
+  }
+  
+  .hero-overlay{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(900px 500px at 75% 40%, rgba(199,163,106,.18), transparent 60%),
+      linear-gradient(90deg, rgba(11,11,12,.92) 0%, rgba(11,11,12,.62) 45%, rgba(11,11,12,.25) 100%),
+      linear-gradient(180deg, rgba(11,11,12,.20) 0%, rgba(11,11,12,.95) 100%);
+  }
+  
+  .hero-content{
+    position:relative;
+    padding:72px 0 56px;
+  }
+  
+  .pill{
+    display:inline-block;
+    padding:8px 12px;
+    border-radius:999px;
+    border:1px solid rgba(199,163,106,.35);
+    background: rgba(18,18,20,.55);
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    margin:0 0 18px;
+    font-weight:650;
+    letter-spacing:.2px;
+  }
+  
+  .hero-title{
+    margin:0 0 10px;
+    font-size:56px;
+    line-height:1.03;
+    letter-spacing:.2px;
+  }
+  
+  .hero-sub{
+    margin:0 0 22px;
+    font-size:18px;
+    color:var(--muted);
+    max-width:520px;
+  }
+  
+  .hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  
+  .hero-badges{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:18px;
+  }
+  
+  .badge{
+    padding:10px 12px;
+    border-radius:14px;
+    border:1px solid var(--line);
+    background: rgba(18,18,20,.55);
+    font-weight:650;
+    opacity:.95;
+  }
+  
+  /* SECTIONS */
+  .section{padding:56px 0}
+  
+  .section-head h2{
+    margin:0 0 6px;
+    font-size:34px;
+    letter-spacing:.2px;
+  }
+  
+  .section-head p{
+    margin:0;
+    color:var(--muted);
+  }
+  
+  /* BUTTONS */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    padding:12px 16px;
+    border-radius:14px;
+    font-weight:800;
+    border:1px solid transparent;
+    transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  
+  .btn:hover{transform: translateY(-1px)}
+  .btn:active{transform: translateY(0px)}
+  .btn-lg{padding:14px 18px; border-radius:16px}
+  
+  /* زر ذهبي فخم */
+  .btn-gold{
+    color:#120f0a;
+    background: linear-gradient(135deg, #f2d7a2, #c7a36a, #9d7a42);
+    box-shadow: 0 18px 55px rgba(199,163,106,.22);
+    border:1px solid rgba(255,255,255,.08);
+  }
+  
+  .btn-ghost{
+    color:#fff;
+    background: rgba(18,18,20,.40);
+    border-color: rgba(255,255,255,.18);
+  }
+  
+  .full{width:100%}
+  
+  /* GRID + CARDS */
+  .grid{
+    margin-top:22px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:18px;
+  }
+  
+  .card{
+    background: rgba(18,18,20,.75);
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow: var(--shadow);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  
+  .card:hover{
+    transform: translateY(-6px);
+    border-color: rgba(199,163,106,.35);
+    box-shadow: 0 26px 80px rgba(0,0,0,.65);
+  }
+  
+  .card-media{
+    position:relative;
+    height:190px;
+    overflow:hidden;
+  }
+  
+  .card-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform: scale(1.03);
+    filter: contrast(1.06) saturate(1.06);
+  }
+  
+  .card-media::after{
+    content:"";
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,.00) 0%, rgba(0,0,0,.55) 100%);
+  }
+  
+  .card-body{padding:16px}
+  
+  .card-body h3{
+    margin:0 0 8px;
+    font-size:18px;
+    letter-spacing:.2px;
+  }
+  
+  .card-body .muted{opacity:.78}
+  
+  /* السعر */
+  .price-row{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    padding:10px 0 14px;
+    color:rgba(255,255,255,.82);
+    border-top:1px solid rgba(199,163,106,.18);
+    border-bottom:1px solid rgba(199,163,106,.18);
+    margin:12px 0 14px;
+  }
+  
+  /* split section */
+  .split{
+    display:grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap:18px;
+    align-items:stretch;
+  }
+  
+  .panel{
+    background: rgba(18,18,20,.55);
+    border:1px solid var(--line);
+    border-radius:22px;
+    padding:20px;
+    box-shadow: var(--shadow);
+  }
+  
+  .glass{
+    background: linear-gradient(180deg, rgba(199,163,106,.10), rgba(18,18,20,.55));
+  }
+  
+  .mini-list{
+    display:grid;
+    gap:10px;
+    margin-top:16px;
+    color:rgba(255,255,255,.85);
+  }
+  
+  .steps{
+    margin:10px 0 0;
+    color:rgba(255,255,255,.85);
+  }
+  .steps li{margin:10px 0}
+  
+  /* contact */
+  .contact-grid{
+    margin-top:18px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:14px;
+  }
+  
+  .contact-card{
+    background: rgba(18,18,20,.55);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:16px;
+  }
+  
+  .contact-title{opacity:.75; font-weight:800; margin-bottom:6px}
+  .contact-val{font-weight:750}
+  .footer-cta{margin-top:18px}
+  
+  /* footer */
+  .footer{
+    border-top:1px solid var(--line);
+    padding:22px 0;
+    background: rgba(8,8,9,.55);
+  }
+  
+  .footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  
+  /* خيارات Pickup/Delivery */
+  .order-options{
+    display:flex;
+    gap:12px;
+    margin:12px 0 16px;
+    flex-wrap:wrap;
+  }
+  
+  .order-options label{
+    background: rgba(255,255,255,.05);
+    border:1px solid rgba(199,163,106,.25);
+    padding:8px 14px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:14px;
+  }
+  
+  .order-options input{
+    margin-right:6px;
+  }
+  
+  /* ملاحظة التوصيل (Uber) */
+  .delivery-note{
+    font-size:13px;
+    opacity:.75;
+    margin:12px 0 0;
+  }
+  
+  /* ملاحظة تحت الهيرو */
+  .hero-note{
+    margin-top:12px;
+    max-width:650px;
+  }
+  
+  /* زر عائم للطلب */
+  .floating-order{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:999;
+    padding:12px 16px;
+    border-radius:16px;
+    font-weight:900;
+    color:#120f0a;
+    background: linear-gradient(135deg, #f2d7a2, #c7a36a, #9d7a42);
+    box-shadow: 0 18px 55px rgba(199,163,106,.22);
+    border:1px solid rgba(255,255,255,.08);
+  }
+  
+  /* responsive */
+  @media (max-width: 980px){
+    .nav-links{display:none}
+    .burger{display:block}
+    .hero-title{font-size:44px}
+    .grid{grid-template-columns:1fr}
+    .split{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+  }

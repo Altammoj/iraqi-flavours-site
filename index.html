@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Iraqi Flavours | Oakville</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo.png">
+</head>
+
+<body>
+  <!-- Top Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top">
+        <img src="images/logo.png" alt="Iraqi Flavours logo" class="logo" />
+        <span>Iraqi Flavours</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+
+        <div class="nav-cta">
+          <a class="btn btn-gold" href="https://ig.me/m/iraqi_flavours" target="_blank" rel="noopener">
+            Instagram Order
+          </a>
+        </div>
+      </div>
+
+      <button class="burger" aria-label="Open menu" onclick="document.body.classList.toggle('menu-open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="drawer">
+      <a href="#menu" onclick="document.body.classList.remove('menu-open')">Menu</a>
+      <a href="#about" onclick="document.body.classList.remove('menu-open')">About</a>
+      <a href="#contact" onclick="document.body.classList.remove('menu-open')">Contact</a>
+
+      <a class="btn btn-gold" href="https://ig.me/m/iraqi_flavours" target="_blank" rel="noopener">
+        Instagram Order
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="top" class="hero">
+    <div class="hero-bg" style="background-image:url('images/hero.jpg')"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <p class="pill">Iraqi Home Kitchen • Oakville</p>
+
+      <h1 class="hero-title">Iraqi Flavours</h1>
+      <p class="hero-sub">Authentic Homemade Iraqi Food</p>
+
+      <div class="hero-actions">
+        <a class="btn btn-gold btn-lg" href="https://ig.me/m/iraqi_flavours" target="_blank" rel="noopener">
+          Order on Instagram
+        </a>
+      </div>
+
+      <p class="muted hero-note">
+        Pickup available (Free). Delivery available via Uber courier (fee depends on distance).
+      </p>
+
+      <div class="hero-badges">
+        <div class="badge">Cooked meals</div>
+        <div class="badge">Frozen meals</div>
+        <div class="badge">Pickup in Oakville</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Order Button -->
+  <a class="floating-order" href="https://ig.me/m/iraqi_flavours" target="_blank" rel="noopener">
+    Order on Instagram
+  </a>
+
+  <!-- Menu -->
+  <main class="container">
+    <section id="menu" class="section">
+      <div class="section-head">
+        <h2>Menu</h2>
+        <p>Cooked & Frozen meals available</p>
+      </div>
+
+      <div class="grid">
+
+        <!-- Item 1 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="images/turkey-cheese.jpg" alt="Turkey & Cheese Samosa" />
+          </div>
+          <div class="card-body">
+            <h3>Turkey & Cheese Samosa</h3>
+            <p class="muted">Crispy, golden, freshly made.</p>
+
+            <div class="price-row">
+              <span>6 pcs — $11</span>
+              <span>12 pcs — $18</span>
+            </div>
+
+            <div class="order-options">
+              <label><input type="radio" name="type1" value="Pickup" checked> Pickup (Free)</label>
+              <label><input type="radio" name="type1" value="Delivery"> Delivery (Uber fee applies)</label>
+            </div>
+
+            <button class="btn btn-gold full" onclick="openOrder('Turkey & Cheese Samosa','type1')">
+              Order Now
+            </button>
+
+            <button class="btn btn-ghost full" onclick="copyOrder('Turkey & Cheese Samosa','type1')">
+              Copy Order Text
+            </button>
+
+            <p class="delivery-note">Delivery is arranged via Uber courier. Fee depends on distance.</p>
+          </div>
+        </article>
+
+        <!-- Item 2 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="images/veg-samosa.jpg" alt="Vegetable Samosa" />
+          </div>
+          <div class="card-body">
+            <h3>Vegetable Samosa</h3>
+            <p class="muted">Fresh veggies, seasoned Iraqi style.</p>
+
+            <div class="price-row">
+              <span>6 pcs — $9</span>
+              <span>12 pcs — $15</span>
+            </div>
+
+            <div class="order-options">
+              <label><input type="radio" name="type2" value="Pickup" checked> Pickup (Free)</label>
+              <label><input type="radio" name="type2" value="Delivery"> Delivery (Uber fee applies)</label>
+            </div>
+
+            <button class="btn btn-gold full" onclick="openOrder('Vegetable Samosa','type2')">
+              Order Now
+            </button>
+
+            <button class="btn btn-ghost full" onclick="copyOrder('Vegetable Samosa','type2')">
+              Copy Order Text
+            </button>
+
+            <p class="delivery-note">Delivery is arranged via Uber courier. Fee depends on distance.</p>
+          </div>
+        </article>
+
+        <!-- Item 3 -->
+        <article class="card">
+          <div class="card-media">
+            <img src="images/rice-kebbeh.jpg" alt="Iraqi Rice Kebbeh" />
+          </div>
+          <div class="card-body">
+            <h3>Iraqi Rice Kebbeh</h3>
+            <p class="muted">Classic Iraqi taste, handmade.</p>
+
+            <div class="price-row">
+              <span>6 pcs — $15</span>
+              <span>12 pcs — $25</span>
+            </div>
+
+            <div class="order-options">
+              <label><input type="radio" name="type3" value="Pickup" checked> Pickup (Free)</label>
+              <label><input type="radio" name="type3" value="Delivery"> Delivery (Uber fee applies)</label>
+            </div>
+
+            <button class="btn btn-gold full" onclick="openOrder('Iraqi Rice Kebbeh','type3')">
+              Order Now
+            </button>
+
+            <button class="btn btn-ghost full" onclick="copyOrder('Iraqi Rice Kebbeh','type3')">
+              Copy Order Text
+            </button>
+
+            <p class="delivery-note">Delivery is arranged via Uber courier. Fee depends on distance.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section split">
+      <div class="panel">
+        <h2>About</h2>
+        <p class="muted">
+          Iraqi Flavours is a home kitchen in Oakville serving authentic Iraqi taste.
+          Cooked and frozen options available. Made with care, fresh ingredients, and classic recipes.
+        </p>
+        <div class="mini-list">
+          <div>✅ Clean & fresh</div>
+          <div>✅ Made to order</div>
+          <div>✅ Fast DM response</div>
+        </div>
+      </div>
+
+      <div class="panel glass">
+        <h3>How to order</h3>
+        <ol class="steps">
+          <li>Select Pickup or Delivery</li>
+          <li>Tap “Copy Order Text”</li>
+          <li>Open Instagram DM and paste</li>
+        </ol>
+
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="https://ig.me/m/iraqi_flavours" target="_blank" rel="noopener">
+            Open Instagram DM
+          </a>
+        </div>
+
+        <p class="delivery-note" style="margin-top:12px">
+          Delivery is arranged via Uber courier. Fee depends on distance.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Fast response on Instagram</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-title">Location</div>
+          <div class="contact-val">Oakville, ON</div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-title">Instagram</div>
+          <div class="contact-val">@iraqi_flavours</div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-title">Orders</div>
+          <div class="contact-val">Pickup / Uber Delivery</div>
+        </div>
+      </div>
+
+      <div class="footer-cta">
+        <a class="btn btn-gold btn-lg" href="https://ig.me/m/iraqi_flavours" target="_blank" rel="noopener">
+          DM to Order
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© Iraqi Flavours</span>
+      <span class="muted">Authentic Homemade Iraqi Food • Oakville</span>
+    </div>
+  </footer>
+
+  <script>
+    function getType(groupName){
+      const el = document.querySelector(`input[name="${groupName}"]:checked`);
+      return el ? el.value : "Pickup";
+    }
+
+    function buildMessage(item, type){
+      return `Hello 👋
+I want to order:
+
+Item: ${item}
+Type: ${type}
+
+Notes:
+- Pickup is free
+- Delivery is arranged via Uber courier (fee depends on distance)
+
+Thank you!`;
+    }
+
+    function openOrder(item, groupName){
+      // يفتح DM
+      window.open("https://ig.me/m/iraqi_flavours", "_blank");
+    }
+
+    async function copyOrder(item, groupName){
+      const type = getType(groupName);
+      const msg = buildMessage(item, type);
+
+      try{
+        await navigator.clipboard.writeText(msg);
+        alert("Copied ✅ Now open Instagram DM and paste.");
+      }catch(e){
+        // fallback
+        const ta = document.createElement("textarea");
+        ta.value = msg;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        alert("Copied ✅ Now open Instagram DM and paste.");
+      }
+    }
+  </script>
+</body>
+</html>
